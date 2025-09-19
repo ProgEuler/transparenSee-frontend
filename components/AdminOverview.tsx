@@ -3,7 +3,6 @@
 import { Users, FolderKanban, MessageSquare, AlertTriangle, Clock } from 'lucide-react'
 
 export function AdminOverview() {
-  // Sample data for admin overview
   const stats = [
     { label: 'Total Projects', value: '2,847', icon: FolderKanban, color: 'text-primary-600', bgColor: 'bg-primary-100' },
     { label: 'Active Users', value: '15,247', icon: Users, color: 'text-secondary-600', bgColor: 'bg-secondary-100' },

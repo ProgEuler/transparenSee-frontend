@@ -10,8 +10,9 @@ export function AdminSidebar() {
   const navItems = [
     { name: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard },
     { name: 'Projects', href: '/admin/projects', icon: FolderKanban },
+    { name: 'Create Project', href: '/admin/projects/create', icon: PlusCircle },
     { name: 'Users', href: '/admin/users', icon: Users },
-    { name: 'Create User', href: '/admin/users/create', icon: PlusCircle }, // New link
+    { name: 'Create User', href: '/admin/users/create', icon: PlusCircle },
     { name: 'Feedback', href: '/admin/feedback', icon: MessageSquare },
     { name: 'Settings', href: '/admin/settings', icon: Settings },
   ]

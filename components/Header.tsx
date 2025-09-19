@@ -14,9 +14,6 @@ export function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <Shield className="w-5 h-5 text-primary-foreground" />
-              </div>
               <span className="text-xl font-bold text-foreground">TransparenSee</span>
             </Link>
           </div>
@@ -25,9 +22,6 @@ export function Header() {
           <nav className="hidden md:flex items-center space-x-8">
             <Link href="/projects" className="text-muted-foreground hover:text-primary font-medium">
               Projects
-            </Link>
-            <Link href="/manifesto" className="text-muted-foreground hover:text-primary font-medium">
-              Manifesto Tracker
             </Link>
             <Link href="/e-tender" className="text-muted-foreground hover:text-primary font-medium">
               E-Tender
@@ -87,13 +81,6 @@ export function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Projects
-              </Link>
-              <Link
-                href="/manifesto"
-                className="block px-3 py-2 text-muted-foreground hover:text-primary font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Manifesto Tracker
               </Link>
               <Link
                 href="/e-tender"

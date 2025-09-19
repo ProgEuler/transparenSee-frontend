@@ -1,28 +1,20 @@
 export interface Project {
-  id: string
-  title: string
-  description: string
-  budget: {
-    allocated: number
-    spent: number
-  }
-  status: 'on-track' | 'delayed' | 'flagged' | 'completed'
-  responsibleAuthority: {
-    name: string
-    department: string
-    profileLink: string
-  }
-  region: string
-  ministry: string
-  category: 'ICT' | 'Healthcare' | 'Infrastructure' | 'Education' | 'Other'
-  deadline: string
-  startDate: string
-  transparencyProofs: TransparencyProof[]
-  blockchainHash?: string
-  location: {
-    lat: number
-    lng: number
-  }
+  id: number;
+  name: string;
+  description: string;
+  from: string;
+  to: string;
+  status: "live" | "closed" | "postponed";
+  category: string;
+  division: string;
+  address: string;
+  ministry: string;
+  org: string;
+  tag?: string[];
+  budget: number;
+  file?: any;
+  fileFeedKey?: string;
+  filePath?: string;
 }
 
 export interface TransparencyProof {
@@ -34,9 +26,17 @@ export interface TransparencyProof {
   ipfsHash?: string
 }
 
+export interface FeedbackAttachment {
+  id: string;
+  url: string;
+  type: 'image' | 'document' | 'video'; // Assuming images for now
+  fileName?: string;
+}
+
 export interface CitizenFeedback {
   id: string
-  projectId: string
+  projectId?: string // Optional: Link to a specific project
+  tenderId?: string // Optional: Link to a specific tender
   content: string
   author: {
     name: string
@@ -47,6 +47,7 @@ export interface CitizenFeedback {
   createdAt: string
   upvotes: number
   downvotes: number
+  attachments?: FeedbackAttachment[] // New: Array of attachments
 }
 
 export interface ManifestoPromise {
