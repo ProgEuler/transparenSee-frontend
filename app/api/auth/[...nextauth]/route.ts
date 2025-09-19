@@ -1,7 +1,7 @@
 import NextAuth, { NextAuthOptions } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 
-export const authOptions: NextAuthOptions = {
+const handler = NextAuth({
   providers: [
     // Normal Username + Password login
     CredentialsProvider({
@@ -67,7 +67,7 @@ export const authOptions: NextAuthOptions = {
     },
     async session({ session, token }) {
       session.user.role = token.role
-      session.user.accessToken = token.token
+      session.user.accessToken = token.accessToken
       return session
     }
   },
@@ -78,8 +78,8 @@ export const authOptions: NextAuthOptions = {
 
   pages: {
     signIn: "/auth/login"
-  }
-}
+  },
+  secret: process.env.NEXTAUTH_SECRET
+})
 
-const handler = NextAuth(authOptions)
 export { handler as GET, handler as POST }
